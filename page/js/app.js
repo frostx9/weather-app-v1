@@ -1,3 +1,4 @@
+
 const weatherForm = document.querySelector('form')     // form from index.html..targeting
 const search = document.querySelector('input')
 const msgone = document.querySelector('#msgone')
@@ -9,7 +10,7 @@ msgtwo.textContent=''
 weatherForm.addEventListener('submit',(e)=>{            //  e.preventDefault() ...stop default action...stop refresh the page, event = e
     e.preventDefault()
     const location = search.value       // related with const search = document.querySelector('input')...value is a htnl property.....grabing the input value and save into location variable
-    fetch('http://localhost:4000/weather?address='+location).then((response)=>{
+    fetch('/weather?address='+location).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
                 msgone.textContent=data.error
